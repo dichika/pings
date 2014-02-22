@@ -31,10 +31,15 @@ pings(iris %.%
 pings(x, interval = 0.25, countp = 2, endp = 8)
 
 ## Arguments
-x        dplyr code
 
-interval Time interval between sound.
+### x
+dplyr code
 
-countp   Count "%.%" sound. You can choose 1-9.
+### interval
+Time interval between sound.
 
-endp     Finish sound. You can choose 1-9.
+### countp
+Count "%.%" sound. You can choose 1-9.
+
+### endp
+Finish sound. You can choose 1-9.
