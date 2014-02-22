@@ -11,6 +11,7 @@ pings <- function(x, interval=0.25, countp=2, endp=8){
     }else{
       Sys.sleep(interval)
       ping(endp)
+      Sys.sleep(interval)
       break
     }
   }
