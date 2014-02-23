@@ -23,7 +23,8 @@ library(pings)
 pings(iris %.%
        group_by(Species) %.%
        summarise(count=n()) %.%
-        tally()
+        tally() %.%
+        print()
       )
 ```
 
