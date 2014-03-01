@@ -34,7 +34,7 @@ pings <- function(x, interval=0.25, countp=2, endp=8){
     return(eval(x))
 }}
 
-pings2 <- function(x, interval=0.25){
+pings2 <- function(x, interval=0.25, type="ore"){
   require(dplyr)
   require(pingr)
   res <- substitute(x) %.% paste(collapse="") %.% gregexpr(pattern="%.%") %.% unlist()
@@ -51,11 +51,14 @@ pings2 <- function(x, interval=0.25){
     repeat {
       if (i < time){
         i <- i+1
-        ping2(path=system.file(paste("sounds/", "a_02.wav", sep = ""), package = "pingr"))
+        switch(type,
+        "moe" = ping2(path=system.file(paste("sounds/", "a_02.wav", sep = ""), package = "pings")),
+        "ore" = ping2(path=system.file(paste("sounds/", "yeah.wav", sep = ""), package = "pings"))        
+        )
         Sys.sleep(interval)
       }else{
         Sys.sleep(interval)
-        ping2(path=system.file(paste("sounds/", "tsuzumi.wav", sep = ""), package = "pingr"))
+        ping2(path=system.file(paste("sounds/", "tsuzumi.wav", sep = ""), package = "pings"))
         Sys.sleep(interval)
         break
       }
