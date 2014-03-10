@@ -52,13 +52,13 @@ pings2 <- function(x, interval=0.25, type="ore"){
       if (i < time){
         i <- i+1
         switch(type,
-        "moe" = ping2(path=system.file(paste("sounds/", "a_02.wav", sep = ""), package = "pings")),
-        "ore" = ping2(path=system.file(paste("sounds/", "yeah.wav", sep = ""), package = "pings"))        
+        "moe" = ping(system.file(paste("sounds/", "a_02.wav", sep = ""), package = "pings")),
+        "ore" = ping(system.file(paste("sounds/", "yeah.wav", sep = ""), package = "pings"))        
         )
         Sys.sleep(interval)
       }else{
         Sys.sleep(interval)
-        ping2(path=system.file(paste("sounds/", "tsuzumi.wav", sep = ""), package = "pings"))
+        ping(system.file(paste("sounds/", "tsuzumi.wav", sep = ""), package = "pings"))
         Sys.sleep(interval)
         break
       }
