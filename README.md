@@ -1,7 +1,7 @@
 pings
 =====
 
-pings for all %.% user 
+pings for all %>% user 
 ## Installation
 You need to install dependents before installing pingr.
 
@@ -41,7 +41,7 @@ dplyr code
 Time interval between sound.
 
 ### countp
-Count "%>%" sound. You can choose 1-9.
+Count "%>%" sound. You can choose 1-10.
 
 ### endp
-Finish sound. You can choose 1-9.
+Finish sound. You can choose 1-10.
