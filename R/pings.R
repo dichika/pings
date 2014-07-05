@@ -1,7 +1,8 @@
 pings <- function(x, interval=0.25, countp=2, endp=8){
   require(dplyr)
   require(beepr)
-  res <- substitute(x) %>% paste(collapse="") %>% gregexpr(pattern="%.%") %>% unlist()
+  trg <- substitute(x)
+  res <- trg %>% paste(collapse="") %>% gregexpr(pattern="%.%") %>% unlist()
   time <- res %>% length()
   if(res[1] != -1){
     i <- 0
@@ -35,7 +36,8 @@ pings <- function(x, interval=0.25, countp=2, endp=8){
 pings2 <- function(x, interval=0.25, type="ore"){
   require(dplyr)
   require(beepr)
-  res <- substitute(x) %>% paste(collapse="") %>% gregexpr(pattern="%.%") %>% unlist()
+  trg <- substitute(x)
+  res <- trg %>% paste(collapse="") %>% gregexpr(pattern="%.%") %>% unlist()
   time <- res %>% length()
   if(res[1] != -1){
     tryCatch({
