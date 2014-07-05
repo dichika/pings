@@ -1,9 +1,10 @@
 Package: pings
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
-Date: 2014-02-21
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Title: Make your CHAIN life happier
+Version: 1.1
+Date: 2014-07-05
+Author: dichika
+Maintainer: dichika <yourfault@somewhere.net>
+Description: This package offers one function, pings().
+License: MIT
+Imports: beepr,dplyr
