@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 pings <- function(x, interval=0.25, countp=2, endp=8){
   require(dplyr)
   require(beepr)
