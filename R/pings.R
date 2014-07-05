@@ -1,8 +1,9 @@
+<<<<<<< HEAD
 pings <- function(x, interval=0.25, countp=2, endp=8){
   require(dplyr)
   require(beepr)
-  res <- substitute(x) %.% paste(collapse="") %.% gregexpr(pattern="%.%") %.% unlist()
-  time <- res %.% length()
+  res <- substitute(x) %>% paste(collapse="") %>% gregexpr(pattern="%.%") %>% unlist()
+  time <- res %>% length()
   if(res[1] != -1){
     i <- 0
     repeat {
@@ -32,11 +33,11 @@ pings <- function(x, interval=0.25, countp=2, endp=8){
     stop(call.=FALSE, domain=NA)
   })
 }
-beeps2 <- function(x, interval=0.25, type="ore"){
+pings2 <- function(x, interval=0.25, type="ore"){
   require(dplyr)
   require(beepr)
-  res <- substitute(x) %.% paste(collapse="") %.% gregexpr(pattern="%.%") %.% unlist()
-  time <- res %.% length()
+  res <- substitute(x) %>% paste(collapse="") %>% gregexpr(pattern="%.%") %>% unlist()
+  time <- res %>% length()
   if(res[1] != -1){
     tryCatch({
       eval(x)
