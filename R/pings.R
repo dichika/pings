@@ -1,6 +1,6 @@
 pings <- function(x, interval=0.25, countp=2, endp=8){
   require(dplyr)
-  require(pingr)
+  require(beepr)
   res <- substitute(x) %.% paste(collapse="") %.% gregexpr(pattern="%.%") %.% unlist()
   time <- res %.% length()
   if(res[1] != -1){
@@ -8,11 +8,11 @@ pings <- function(x, interval=0.25, countp=2, endp=8){
     repeat {
       if (i < time){
         i <- i+1
-        ping(countp)
+        beep(countp)
         Sys.sleep(interval)
       }else{
         Sys.sleep(interval)
-        ping(endp)
+        beep(endp)
         Sys.sleep(interval)
         break
       }
@@ -32,9 +32,9 @@ pings <- function(x, interval=0.25, countp=2, endp=8){
     stop(call.=FALSE, domain=NA)
   })
 }
-pings2 <- function(x, interval=0.25, type="ore"){
+beeps2 <- function(x, interval=0.25, type="ore"){
   require(dplyr)
-  require(pingr)
+  require(beepr)
   res <- substitute(x) %.% paste(collapse="") %.% gregexpr(pattern="%.%") %.% unlist()
   time <- res %.% length()
   if(res[1] != -1){
@@ -50,13 +50,13 @@ pings2 <- function(x, interval=0.25, type="ore"){
       if (i < time){
         i <- i+1
         switch(type,
-               "moe" = ping(system.file(paste("sounds/", "a_02.wav", sep = ""), package = "pings")),
-               "ore" = ping(system.file(paste("sounds/", "yeah.wav", sep = ""), package = "pings"))        
+               "moe" = beep(system.file(paste("sounds/", "a_02.wav", sep = ""), package = "pings")),
+               "ore" = beep(system.file(paste("sounds/", "yeah.wav", sep = ""), package = "pings"))        
         )
         Sys.sleep(interval)
       }else{
         Sys.sleep(interval)
-        ping(system.file(paste("sounds/", "tsuzumi.wav", sep = ""), package = "pings"))
+        beep(system.file(paste("sounds/", "tsuzumi.wav", sep = ""), package = "pings"))
         Sys.sleep(interval)
         break
       }
